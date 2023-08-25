@@ -42,7 +42,7 @@ npm run ios
 yarn ios
 ```
 
-## Basics of View, Text and Button Ui Preview
+## Components Ui Preview
 
 <table>
   
@@ -60,7 +60,7 @@ yarn ios
 
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/e84c31b3-0708-456f-a5ad-a53085be00d2" width="270"/>
 
 </td>
 
