@@ -2,7 +2,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
@@ -44,14 +44,12 @@ yarn ios
 
 ## Basics of View, Text and Button Ui Preview
 
-
-
 <table>
   
   
 <tr>                    
    
-   <th>View Text Button</th>
+   <th>Component UI Example View</th>
 
 </tr>
   
@@ -62,10 +60,8 @@ yarn ios
 
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/698c32ae-9a48-40c6-89b7-f7a9aa88f713" width="270"/>
+<img src="" width="270"/>
 
 </td>
-
-
 
 </table>
