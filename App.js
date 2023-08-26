@@ -1,44 +1,38 @@
 import React from 'react';
-import {Text, View, FlatList} from 'react-native';
-import Userdata from './Components/Userdata';
+import {Text, View, SectionList} from 'react-native';
 
 const App = () => {
   const users = [
     {
       id: 1,
       name: 'Somad',
-      email: 'mdsoamd@gmail.com',
+      data: ['Flutter', 'React Native', 'Node.js'],
     },
     {
       id: 2,
       name: 'Yasin',
-      email: 'yasin@gmail.com',
-    },
-    {
-      id: 2,
-      name: 'Subhan',
-      email: 'subhan@gmail.com',
+      data: ['Dart', 'C#', 'C'],
     },
     {
       id: 3,
       name: 'Artaza',
-      email: 'artaza@gmail.com',
-    },
-    {
-      id: 4,
-      name: 'Akif',
-      email: 'akif@gmail.com',
+      data: ['Next.js', 'React.js', 'Node.js'],
     },
   ];
 
   return (
     <View>
       <Text style={{fontSize: 30, color: 'red'}}>
-        Component in loop with flatlist
+        Section List in React native
       </Text>
-      <FlatList
-        data={users}
-        renderItem={({item}) => <Userdata item={item} />}
+      <SectionList
+        sections={users}
+        renderItem={({item}) => (
+          <Text style={{fontSize: 20, marginLeft: 20}}>{item}</Text>
+        )}
+        renderSectionHeader={({section: {name}}) => (
+          <Text style={{fontSize: 24, color: 'yellow'}}>{name}</Text>
+        )}
       />
     </View>
   );

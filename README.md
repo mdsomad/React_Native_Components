@@ -42,14 +42,14 @@ npm run ios
 yarn ios
 ```
 
-##  Component in loop with flatlist React native Ui Preview
+##  Component SectionList in React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Component in loop with flatlist view</th>
+   <th>SectionList Component view</th>
  
 </tr>
   
@@ -60,7 +60,7 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/2cdab8d3-80b0-44fd-a954-e0dd27ac227e" width="270"/>
+<img src="" width="270"/>
 
 </td>
 
