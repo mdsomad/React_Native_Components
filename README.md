@@ -2,7 +2,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
@@ -42,22 +42,15 @@ npm run ios
 yarn ios
 ```
 
-
-
-
-
-
-##  Flat List Components React native Ui Preview
-
-
+## Custom List with map function React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Flat List Components view</th>
-
+   <th>Custom List view</th>
+   <th>Custom List Item End view</th>
 
 </tr>
   
@@ -71,9 +64,10 @@ yarn ios
 <img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/c2e659ea-e172-4b8f-ada6-41dc80e2604d" width="270"/>
 
 </td>
+<td>
 
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/c2e659ea-e172-4b8f-ada6-41dc80e2604d" width="270"/>
 
-
+</td>
 
 </table>
-
