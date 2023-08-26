@@ -47,7 +47,7 @@ yarn ios
 
 
 
-##  Simple Form in React native Ui Preview
+##  Flat List Components React native Ui Preview
 
 
 
@@ -56,9 +56,8 @@ yarn ios
   
 <tr>                    
    
-   <th>Text Input Value Emty view</th>
-   <th>Text Input Data Add view</th>
-   <th>Text Input Clear view</th>
+   <th>Flat List Components view</th>
+
 
 </tr>
   
@@ -69,25 +68,12 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/825639c5-2492-4978-b437-a2711a6e45d9" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/c2e659ea-e172-4b8f-ada6-41dc80e2604d" width="270"/>
 
 </td>
 
-<td>
-
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/ac3fd1d7-0874-45a7-9fc6-1f8bbd62563d" width="270"/>
-
-</td>
-
-<td>
-
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/8325024b-8a0a-4d02-8697-22b2e00aedd1" width="270"/>
-
-</td>
 
 
 
 </table>
-
-
 
