@@ -42,7 +42,7 @@ npm run ios
 yarn ios
 ```
 
-## State vs Variables Ui Preview
+## Props Ui Preview
 
 
 
@@ -51,8 +51,8 @@ yarn ios
   
 <tr>                    
    
-   <th>State Name view</th>
-   <th>State Update Name view</th>
+   <th>Props Name view</th>
+   <th>Props Update Name view</th>
 
 </tr>
   
@@ -63,19 +63,15 @@ yarn ios
 
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/e697fe65-9ff3-4cc7-b455-8bcc25df241e" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/b7a21065-991f-47e4-a3d3-bf6543cf20dc" width="270"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/65904925-8005-4edf-a028-ab24ae7bbdbd" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/e7f03d18-e306-49e2-9488-4f9386808e64" width="270"/>
 
 </td>
 
 
 </table>
-
-
-
-
 
