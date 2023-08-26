@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet,ScrollView} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 
 const App = () => {
   const users = [
@@ -23,7 +23,7 @@ const App = () => {
       id: 4,
       name: 'Akif',
     },
-   
+
     {
       id: 5,
       name: 'Somad',
@@ -64,31 +64,34 @@ const App = () => {
       id: 14,
       name: 'Akif',
     },
-   
   ];
 
   return (
     <View>
-      <Text style={{fontSize: 30, color: 'red'}}>Custom List with map function</Text>
-    <ScrollView style={{marginBottom:50}}>
+      <Text style={{fontSize: 30, color: 'red'}}>Grid with Dynamic Data</Text>
 
-      {users.map(item => (
-        <Text style={styles.item}>{item.name}</Text>
+      <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap'}}>
+        {users.map(item => (
+          <Text style={styles.item}>{item.name}</Text>
         ))}
-        </ScrollView>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   item: {
-    fontSize: 24,
-    padding: 10,
+    fontSize: 25,
+    padding: 5,
     color: '#fff',
     backgroundColor: 'blue',
     borderColor: 'black',
     borderWidth: 1,
-    margin: 10,
+    margin: 5,
+    width: 120,
+    height: 120,
+    textAlign: 'center',
+    textAlignVertical: 'center',
   },
 });
 

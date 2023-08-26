@@ -42,15 +42,15 @@ npm run ios
 yarn ios
 ```
 
-## Custom List with map function React native Ui Preview
+## Grid with Dynamic Data React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Custom List view</th>
-   <th>Custom List Item End view</th>
+   <th>Grid Constant data view</th>
+   <th>Grid Dynamic data view</th>
 
 </tr>
   
