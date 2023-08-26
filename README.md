@@ -47,7 +47,7 @@ yarn ios
 
 
 
-##  Get Text Input Value Handling Text Input Ui Preview
+##  Simple Form in React native Ui Preview
 
 
 
@@ -56,9 +56,9 @@ yarn ios
   
 <tr>                    
    
-   <th>Get Text Input Value Emty view</th>
-   <th>Get Text Input Value view</th>
-   <th>Get Text Input Value view</th>
+   <th>Text Input Value Emty view</th>
+   <th>Text Input Data Add view</th>
+   <th>Text Input Clear view</th>
 
 </tr>
   

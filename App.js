@@ -3,17 +3,58 @@ import {Text, View, TextInput, StyleSheet, Button} from 'react-native';
 
 const App = () => {
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [display, setDisplay] = useState(false);
+
+  const resetFormData = () => {
+    setName('');
+    setEmail('');
+    setPassword('');
+  };
+
   return (
     <View>
-      <Text style={{fontSize: 30, color: 'red'}}>HandLine Text input</Text>
-      <Text style={{fontSize: 30, color: 'white'}}>Your Name is : {name}</Text>
+      <Text style={{fontSize: 30, color: 'red'}}>
+        Simple Form in React native
+      </Text>
       <TextInput
         style={style.textInput}
-        placeholder="Enter name"
+        placeholder="Enter User Name"
+        onChangeText={text => setName(text)}
         value={name}
-        onChangeText={val => setName(val)}
       />
-      <Button title="Clear Input Value" onPress={() => setName('')}></Button>
+      <TextInput
+        style={style.textInput}
+        placeholder="Enter User Email Address"
+        onChangeText={text => setEmail(text)}
+        value={email}
+      />
+      <TextInput
+        style={style.textInput}
+        placeholder="Enter User Password"
+        onChangeText={text => setPassword(text)}
+        value={password}
+        secureTextEntry={true}
+      />
+      <View style={{marginBottom: 10}}>
+        <Button
+          color={'green'}
+          title="Print Details"
+          onPress={() => setDisplay(true)}
+        />
+      </View>
+      <Button title="Clear Details" onPress={resetFormData} />
+
+      <View>
+        {display ? (
+          <View>
+            <Text style={{fontSize: 20}}>User Name is : {name}</Text>
+            <Text style={{fontSize: 20}}>User Email is : {email}</Text>
+            <Text style={{fontSize: 20}}>User Password is : {password}</Text>
+          </View>
+        ) : null}
+      </View>
     </View>
   );
 };
