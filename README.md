@@ -42,7 +42,18 @@ npm run ios
 yarn ios
 ```
 
-## Props Ui Preview
+
+
+Style Type in React Native
+Inline Style
+Internal Style
+External Style
+Basic but Important style properties
+Interview Questions
+
+
+
+##  Style Type in React Native Ui Preview
 
 
 
@@ -51,8 +62,7 @@ yarn ios
   
 <tr>                    
    
-   <th>Props Name view</th>
-   <th>Props Update Name view</th>
+   <th>Style view</th>
 
 </tr>
   
@@ -63,14 +73,10 @@ yarn ios
 
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/b7a21065-991f-47e4-a3d3-bf6543cf20dc" width="270"/>
+<img src="" width="270"/>
 
 </td>
-<td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/e7f03d18-e306-49e2-9488-4f9386808e64" width="270"/>
-
-</td>
 
 
 </table>
