@@ -42,7 +42,7 @@ npm run ios
 yarn ios
 ```
 
-## Basics of View, Text and Button Ui Preview
+## Button Press Ui Preview
 
 
 
@@ -51,7 +51,7 @@ yarn ios
   
 <tr>                    
    
-   <th>View Text Button</th>
+   <th>Button and Press</th>
 
 </tr>
   
@@ -62,10 +62,11 @@ yarn ios
 
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/698c32ae-9a48-40c6-89b7-f7a9aa88f713" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/1c5e604c-b59f-4345-bf0d-85b9b3c14d8d" width="270"/>
 
 </td>
 
 
 
 </table>
+
