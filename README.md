@@ -42,7 +42,7 @@ npm run ios
 yarn ios
 ```
 
-## Button Press Ui Preview
+## State vs Variables Ui Preview
 
 
 
@@ -51,7 +51,8 @@ yarn ios
   
 <tr>                    
    
-   <th>Button and Press</th>
+   <th>State Name view</th>
+   <th>State Update Name view</th>
 
 </tr>
   
@@ -62,11 +63,19 @@ yarn ios
 
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/1c5e604c-b59f-4345-bf0d-85b9b3c14d8d" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/e697fe65-9ff3-4cc7-b455-8bcc25df241e" width="270"/>
+
+</td>
+<td>
+
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/65904925-8005-4edf-a028-ab24ae7bbdbd" width="270"/>
 
 </td>
 
 
-
 </table>
+
+
+
+
 
