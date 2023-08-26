@@ -1,37 +1,32 @@
 import React, {useState} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import ExternalStyles from './Components/Style'
+import {Text, View, TextInput, StyleSheet, Button} from 'react-native';
 
 const App = () => {
-  const [name, setName] = useState('Somad');
+  const [name, setName] = useState('');
   return (
     <View>
-      <Text style={{fontSize: 30, color: 'red', backgroundColor: 'yellow'}}>
-        In Line Style Add
-      </Text>
-      <Text style={styles.textBox}>Style in React native</Text>
-      <Text style={styles.textBox}>Style in React native</Text>
-      <Text style={styles.textBox}>Style in React native</Text>
-      <Text style={ExternalStyles.textBox}>Only External Styles Add</Text>
-      <Text style={[styles.textBox, ExternalStyles.textBox,{marginTop:30}]}>Add All Style Add</Text>
+      <Text style={{fontSize: 30, color: 'red'}}>HandLine Text input</Text>
+      <Text style={{fontSize: 30, color: 'white'}}>Your Name is : {name}</Text>
+      <TextInput
+        style={style.textInput}
+        placeholder="Enter name"
+        value={name}
+        onChangeText={val => setName(val)}
+      />
+      <Button title="Clear Input Value" onPress={() => setName('')}></Button>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  textBox: {
-    fontSize: 30,
-    color: 'blue',
-    backgroundColor: 'lightblue',
-    marginTop: 10,
-    marginHorizontal: 10,
-    padding: 10,
-    borderRadius: 10,
-    height: 100,
-    textAlignVertical: 'center',
-    textAlign: 'center',
-    borderColor:"red",
-    borderWidth:3
+const style = StyleSheet.create({
+  textInput: {
+    fontSize: 18,
+    margin: 10,
+    paddingLeft: 30,
+    color: 'green',
+    borderWidth: 2,
+    borderColor: 'white',
+    borderRadius: 5,
   },
 });
 

@@ -44,16 +44,10 @@ yarn ios
 
 
 
-Style Type in React Native
-Inline Style
-Internal Style
-External Style
-Basic but Important style properties
-Interview Questions
 
 
 
-##  Style Type in React Native Ui Preview
+##  Get Text Input Value Handling Text Input Ui Preview
 
 
 
@@ -62,7 +56,9 @@ Interview Questions
   
 <tr>                    
    
-   <th>Style view</th>
+   <th>Get Text Input Value Emty view</th>
+   <th>Get Text Input Value view</th>
+   <th>Get Text Input Value view</th>
 
 </tr>
   
@@ -73,7 +69,17 @@ Interview Questions
 
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/294d890f-d4e2-4eb7-969b-df19c24e1737" width="270"/>
+<img src="" width="270"/>
+
+</td>
+<td>
+
+<img src="" width="270"/>
+
+</td>
+<td>
+
+<img src="" width="270"/>
 
 </td>
 
