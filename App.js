@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text,View,Button} from 'react-native';
 
 const App = () => {
-  let data = 200;
-  const fruit = (value)=>{
-    data = 50
-    console.warn(data)
+  const [name, setName] = useState("Md Somad");
+
+  function testName(){
+    setName("Updated Name: Sanchita")
   }
+
 
   return (
     <View>
-      <Text style={{fontSize:30}}>{data}</Text>
-      <Button title='On Press' color={"red"} onPress={()=> fruit("Hello Somad")}></Button>
-      <Button title='On Press 2' color={"green"} onPress={fruit}></Button>
+      <Text style={{fontSize:30}}>{name}</Text>
+      <Button title='Update Name' color={"red"} onPress={testName}></Button>
     </View>
   );
 };
