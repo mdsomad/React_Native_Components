@@ -61,17 +61,16 @@ yarn ios
   
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/0dff166d-0cfc-4f65-8b8a-5157a883267c" width="270"/>
 
 </td>
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/d53234c9-72f8-4ead-a28d-2392e8d7503d" width="270"/>
 
 </td>
 
 
 
 </table>
-
 
