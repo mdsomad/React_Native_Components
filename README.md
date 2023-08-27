@@ -42,14 +42,14 @@ npm run ios
 yarn ios
 ```
 
-##  Component SectionList in React native Ui Preview
+##  Class Component in React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>SectionList Component view</th>
+   <th>Class Component view</th>
  
 </tr>
   
