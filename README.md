@@ -42,14 +42,16 @@ npm run ios
 yarn ios
 ```
 
-##  Class Component in React native Ui Preview
+##  State and Props in Class Component in React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Class Component view</th>
+   <th>State and Props TextInput Emty view</th>
+   <th>State and Props TextInput NotEmty view</th>
+   <th>State and Props TextInput Emty view</th>
  
 </tr>
   
@@ -60,7 +62,17 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/195005d2-d772-4475-85ac-c89ee5f82173" width="270"/>
+<img src="" width="270"/>
+
+</td>
+<td>
+
+<img src="" width="270"/>
+
+</td>
+<td>
+
+<img src="" width="270"/>
 
 </td>
 
