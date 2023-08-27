@@ -49,8 +49,8 @@ yarn ios
   
 <tr>                    
    
-   <th> useEffect hook view</th>
-   <th> useEffect hook 2 view</th>
+   <th> useEffect hook count 0 view</th>
+   <th> useEffect hook count update view</th>
  
 </tr>
   
@@ -61,21 +61,18 @@ yarn ios
   
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/4e7c2d2f-552e-40f7-a358-aa2d449fea82" width="270"/>
 
 </td>
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/79c3c717-5b18-465e-8032-899834767530" width="270"/>
 
 </td>
 
 
 
 </table>
-
-
-
 
 
 
