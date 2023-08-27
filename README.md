@@ -42,15 +42,15 @@ npm run ios
 yarn ios
 ```
 
-##  useEffect hook as life cycle method in functional component in React native Ui Preview
+##   Toggle, Show and Hide component in React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th> useEffect hook count update view</th>
-   <th> useEffect hook data update view</th>
+   <th> Show Component view</th>
+   <th> Hide Component view</th>
  
 </tr>
   
@@ -61,12 +61,12 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/e13beb8b-0198-4467-87e5-ba2fe0ccc2ec" width="270"/>
+<img src="" width="270"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/1865e537-0db1-4e00-be89-d73756a3e2de" width="270"/>
+<img src="" width="270"/>
 
 </td>
 
