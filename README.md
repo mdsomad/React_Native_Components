@@ -42,15 +42,15 @@ npm run ios
 yarn ios
 ```
 
-##   Toggle, Show and Hide component in React native Ui Preview
+##   ComponentDidUnmount | Life Cycle Method in React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th> Show Component view</th>
-   <th> Hide Component view</th>
+   <th> Component Unmount view</th>
+   <th> Component Unmount view 2</th>
  
 </tr>
   
@@ -61,12 +61,12 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/0dff166d-0cfc-4f65-8b8a-5157a883267c" width="270"/>
+<img src="" width="270"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/d53234c9-72f8-4ead-a28d-2392e8d7503d" width="270"/>
+<img src="" width="270"/>
 
 </td>
 
@@ -74,3 +74,46 @@ yarn ios
 
 </table>
 
+
+
+
+
+## Code Example
+```bash
+import React, {useEffect, useState} from 'react';
+import {Button, Text, View} from 'react-native';
+
+const App = () => {
+  const [show, setShow] = useState(false);
+
+  return (
+    <View>
+      <Text style={{fontSize: 30}}>useEffect for Unmount Component</Text>
+      <Button title="Toggle" onPress={() => setShow(!show)} />
+      {show ? <Student /> : null}
+    </View>
+  );
+};
+
+
+
+#TODO: Create Student Component
+const Student = () => {
+  let timer = setInterval(() => {
+    console.warn('Timer called');
+  }, 2000);
+
+  useEffect(() => {
+    return () => clearInterval(timer);
+  });
+
+  return (
+    <View>
+      <Text style={{fontSize: 30, color: 'green'}}>Student Show Component</Text>
+    </View>
+  );
+};
+
+export default App;
+
+```
