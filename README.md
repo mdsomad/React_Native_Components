@@ -60,12 +60,11 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/9d259292-36bc-4a7e-8b7b-f3df59e134ed" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/195005d2-d772-4475-85ac-c89ee5f82173" width="270"/>
 
 </td>
 
 
 </table>
-
 
 
