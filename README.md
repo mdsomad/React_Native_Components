@@ -49,8 +49,8 @@ yarn ios
   
 <tr>                    
    
-   <th> useEffect hook count 0 view</th>
    <th> useEffect hook count update view</th>
+   <th> useEffect hook data update view</th>
  
 </tr>
   
