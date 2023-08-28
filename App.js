@@ -1,48 +1,39 @@
-import React, {useState} from 'react';
-import {View, StyleSheet, Button, Text} from 'react-native';
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {View, Text, Button} from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
-  const [show, setShow] = useState(false);
 
   return (
-    <View style={styles.container}>
-      {show ? (
-        <View style={styles.modal}>
-          <View style={styles.body}>
-            <Text
-              style={{color: 'black', textAlign: 'center', marginBottom: 10}}>
-              Custom Dialog
-            </Text>
-            <Button title="Close dialog" onPress={() => setShow(false)} />
-          </View>
-        </View>
-      ) : null}
-
-      <Button title="Open Dialog" onPress={() => setShow(true)} />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-end',
-  },
-  modal: {
-    flex: 1,
-    backgroundColor: 'rgba(180, 180, 180,.5)',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  body: {
-    backgroundColor: 'yellow',
-    height: 250,
-    width: 320,
-    // alignItems: 'center',
-    padding: 10,
-    justifyContent: 'center',
-    borderRadius: 10,
-  },
-});
+const HomeScreen = () => {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text style={{fontSize: 30, color: 'black'}}>Home Screen</Text>
+    </View>
+  );
+};
+const LoginScreen = props => {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text style={{fontSize: 30, color: 'black'}}>Login Screen</Text>
+      <Button
+        title="Go to homeS"
+        onPress={() => props.navigation.navigate('Home')}
+      />
+    </View>
+  );
+};
 
 export default App;
