@@ -42,7 +42,7 @@ npm run ios
 yarn ios
 ```
 
-## Modal | Dialog Box in React Native in React native Ui Preview
+## Pressable | Long press in React Native in React native Ui Preview
 
 <table>
   
@@ -51,7 +51,6 @@ yarn ios
    
    <th>Normal on press view</th>
    <th>Long on press view</th>
-   <th>On press in view</th>
    <th>On press out view</th>
   
 </tr>
@@ -63,26 +62,26 @@ yarn ios
   
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/2ea88c12-80a0-4afc-9cb3-37f93c3f3e7a" width="270"/>
 
 </td>
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/90040069-bd97-4a49-b297-d4de1d6dcbec" width="270"/>
 
 </td>
 <td>
 
-<img src="" width="270"/>
-
-</td>
-<td>
-
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/1b26a29c-a114-4088-bba0-29b99fbdceab" width="270"/>
 
 </td>
 
 </table>
+
+
+
+
+
 
 ## Code Example
 
