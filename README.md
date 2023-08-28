@@ -60,7 +60,7 @@ yarn ios
   
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/b8066b84-3fe1-47a5-b987-ca036d7da7d2" width="270"/>
 
 </td>
 
