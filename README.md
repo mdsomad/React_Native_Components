@@ -42,14 +42,14 @@ npm run ios
 yarn ios
 ```
 
-## Activity Indicator | Loader in React Native in React native Ui Preview
+## Modal | Dialog Box in React Native in React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>ActivityIndicator view</th>
+   <th>Modal | Dialog Box view</th>
   
 </tr>
   
@@ -60,7 +60,7 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/b8066b84-3fe1-47a5-b987-ca036d7da7d2" width="270"/>
+<img src="" width="270"/>
 
 </td>
 
@@ -73,30 +73,25 @@ yarn ios
 ```bash
 
 import React, {useState} from 'react';
-import {View, StyleSheet, ActivityIndicator, Button} from 'react-native';
+import {View, Button, Modal, StyleSheet, Text} from 'react-native';
 
 const App = () => {
-  const [show, setShow] = useState(false);
-
-  const displayLoader = () => {
-    setShow(true);
-    setTimeout(() => {
-      setShow(false);
-    }, 5000);
-  };
+  const [showModal, setShowModal] = useState(true);
 
   return (
     <View style={styles.main}>
+      <Modal transparent={true} visible={showModal} animationType="slide">
+        <View style={styles.centeredView}>
+          <View style={styles.modealView}>
+            <Text style={styles.modalText}>Hello Somad</Text>
+            <Button title="Clode Modal" onPress={() => setShowModal(false)} />
+          </View>
+        </View>
+      </Modal>
 
-      {/* <ActivityIndicator size="small" color="red" /> */}
-      
-      <ActivityIndicator size={100} color="red" animating={show} />
-
-      {show ? (
-        <ActivityIndicator size={100} color="green" animating={show} />
-      ) : null}
-
-      <Button title="Show Loader" onPress={displayLoader} />
+      <View style={styles.buttonView}>
+        <Button title="Open Modal" onPress={() => setShowModal(true)} />
+      </View>
     </View>
   );
 };
@@ -104,14 +99,32 @@ const App = () => {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    alignItems: 'center',
+  },
+  buttonView: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  centeredView: {
+    flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modealView: {
+    backgroundColor: '#fff',
+    padding: 40,
+    borderRadius: 20,
+    shadowColor: 'black',
+    elevation: 5,
+  },
+  modalText: {
+    fontSize: 30,
+    color: 'black',
+    marginBottom: 20,
   },
 });
 
 export default App;
 
-export default App;
 
 
 
