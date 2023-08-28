@@ -42,15 +42,15 @@ npm run ios
 yarn ios
 ```
 
-## Make radio button in React native Ui Preview
+## Dynamic radio button in React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th> Radio button 1 view</th>
-   <th> Radio button 2 view</th>
+   <th> Select Dart view</th>
+   <th>Select Node.js view</th>
  
 </tr>
   
@@ -61,12 +61,12 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/b015cf25-2782-4796-8136-021292227599" width="270"/>
+<img src="" width="270"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/7dc98806-0801-4003-974c-1b9100110e52" width="270"/>
+<img src="" width="270"/>
 
 </td>
 
@@ -81,33 +81,41 @@ import React, {useState} from 'react';
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
 
 const App = () => {
+  const skills = [
+    {
+      id: 1,
+      name: 'Dart',
+    },
+    {
+      id: 2,
+      name: 'Javascript',
+    },
+    {
+      id: 3,
+      name: 'Node.js',
+    },
+    {
+      id: 4,
+      name: 'PHP',
+    },
+  ];
+
   const [selectedRadio, setSelectedRadio] = useState(1);
 
   return (
     <View style={styles.main}>
-
-
-      <TouchableOpacity onPress={() => setSelectedRadio(1)}>
-        <View style={styles.radioWrapper}>
-          <View style={styles.radio}>
-            {selectedRadio === 1 ? <View style={styles.radioBg}></View> : null}
+      {skills.map((item, index) => (
+        <TouchableOpacity key={index} onPress={() => setSelectedRadio(item.id)}>
+          <View style={styles.radioWrapper}>
+            <View style={styles.radio}>
+              {selectedRadio == item.id ? (
+                <View style={styles.radioBg}></View>
+              ) : null}
+            </View>
+            <Text style={styles.radioText}> {item.name}</Text>
           </View>
-          <Text style={styles.radioText}> Radio Button 1</Text>
-        </View>
-      </TouchableOpacity>
-
-
-
-      <TouchableOpacity onPress={() => setSelectedRadio(2)}>
-        <View style={styles.radioWrapper}>
-          <View style={styles.radio}>
-            {selectedRadio === 2 ? <View style={styles.radioBg}></View> : null}
-          </View>
-          <Text style={styles.radioText}> Radio Button 2</Text>
-        </View>
-      </TouchableOpacity>
-
-      
+        </TouchableOpacity>
+      ))}
     </View>
   );
 };
@@ -144,6 +152,7 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
 
 
 ```
