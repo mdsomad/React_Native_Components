@@ -42,16 +42,16 @@ npm run ios
 yarn ios
 ```
 
-## Pressable | Long press in React Native in React native Ui Preview
+## Status Bar Customise in React Native in React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Normal on press view</th>
-   <th>Long on press view</th>
-   <th>On press out view</th>
+   <th>Status Bar view</th>
+   <th>Status Bar Hide view</th>
+   <th>Status Bar Update Style view</th>
   
 </tr>
   
@@ -62,17 +62,17 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/2ea88c12-80a0-4afc-9cb3-37f93c3f3e7a" width="270"/>
+<img src="" width="270"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/90040069-bd97-4a49-b297-d4de1d6dcbec" width="270"/>
+<img src="" width="270"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/1b26a29c-a114-4088-bba0-29b99fbdceab" width="270"/>
+<img src="" width="270"/>
 
 </td>
 
@@ -87,45 +87,48 @@ yarn ios
 
 ```bash
 
-import React from 'react';
-import {View, Pressable, StyleSheet, Text} from 'react-native';
+
+import React, {useState} from 'react';
+import {View, StatusBar, StyleSheet, Button} from 'react-native';
 
 const App = () => {
+  const [hide, setHide] = useState(false);
+  const [barStyle, setBarStyle] = useState('default');
 
   return (
-    <View style={styles.main}>
-      <Pressable
-        onPress={() => console.warn('normal on press')}
-        onLongPress={() => console.warn('Long on press')}
-        onPressin={() => console.warn('On press in')}
-        onPressOut={() => console.warn('Press Out')}>
-        <Text style={styles.pressableButtton}>Pressable</Text>
-      </Pressable>
+    <View style={styles.container}>
+      <StatusBar backgroundColor="red" barStyle={barStyle} hidden={hide} />
+
+      <View style={styles.button1}>
+        <Button title="Toogle Status bar" onPress={() => setHide(!hide)} />
+      </View>
+      <View style={styles.button2}>
+        <Button
+          title="Update Style"
+          onPress={() => setBarStyle('dark-content')}
+        />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  main: {
+  container: {
     flex: 1,
     justifyContent: 'center',
   },
-  pressableButtton: {
-    backgroundColor: 'blue',
-    color: '#fff',
-    padding: 10,
-    margin: 10,
-    borderRadius: 10,
-    fontSize: 20,
-    textAlign: 'center',
-    shadowColor: '#000',
-    elevation: 5,
+  button1: {
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  button2: {
+    paddingLeft: 10,
+    paddingRight: 10,
+    marginTop: 10,
   },
 });
 
 export default App;
-
-
 
 
 

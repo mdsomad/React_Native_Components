@@ -1,35 +1,40 @@
-import React from 'react';
-import {View, Pressable, StyleSheet, Text} from 'react-native';
+import React, {useState} from 'react';
+import {View, StatusBar, StyleSheet, Button} from 'react-native';
 
 const App = () => {
+  const [hide, setHide] = useState(false);
+  const [barStyle, setBarStyle] = useState('default');
+
   return (
-    <View style={styles.main}>
-      <Pressable
-        onPress={() => console.warn('normal on press')}
-        onLongPress={() => console.warn('Long on press')}
-        onPressin={() => console.warn('On press in')}
-        onPressOut={() => console.warn('Press Out')}>
-        <Text style={styles.pressableButtton}>Pressable</Text>
-      </Pressable>
+    <View style={styles.container}>
+      <StatusBar backgroundColor="red" barStyle={barStyle} hidden={hide} />
+
+      <View style={styles.button1}>
+        <Button title="Toogle Status bar" onPress={() => setHide(!hide)} />
+      </View>
+      <View style={styles.button2}>
+        <Button
+          title="Update Style"
+          onPress={() => setBarStyle('dark-content')}
+        />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  main: {
+  container: {
     flex: 1,
     justifyContent: 'center',
   },
-  pressableButtton: {
-    backgroundColor: 'blue',
-    color: '#fff',
-    padding: 10,
-    margin: 10,
-    borderRadius: 10,
-    fontSize: 20,
-    textAlign: 'center',
-    shadowColor: '#000',
-    elevation: 5,
+  button1: {
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  button2: {
+    paddingLeft: 10,
+    paddingRight: 10,
+    marginTop: 10,
   },
 });
 
