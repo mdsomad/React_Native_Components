@@ -1,42 +1,28 @@
 import React, {useState} from 'react';
-import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, StyleSheet, ActivityIndicator, Button} from 'react-native';
 
 const App = () => {
-  const skills = [
-    {
-      id: 1,
-      name: 'Dart',
-    },
-    {
-      id: 2,
-      name: 'Javascript',
-    },
-    {
-      id: 3,
-      name: 'Node.js',
-    },
-    {
-      id: 4,
-      name: 'PHP',
-    },
-  ];
+  const [show, setShow] = useState(false);
 
-  const [selectedRadio, setSelectedRadio] = useState(1);
+  const displayLoader = () => {
+    setShow(true);
+    setTimeout(() => {
+      setShow(false);
+    }, 5000);
+  };
 
   return (
     <View style={styles.main}>
-      {skills.map((item, index) => (
-        <TouchableOpacity key={index} onPress={() => setSelectedRadio(item.id)}>
-          <View style={styles.radioWrapper}>
-            <View style={styles.radio}>
-              {selectedRadio == item.id ? (
-                <View style={styles.radioBg}></View>
-              ) : null}
-            </View>
-            <Text style={styles.radioText}> {item.name}</Text>
-          </View>
-        </TouchableOpacity>
-      ))}
+
+      {/* <ActivityIndicator size="small" color="red" /> */}
+      
+      <ActivityIndicator size={100} color="red" animating={show} />
+
+      {show ? (
+        <ActivityIndicator size={100} color="green" animating={show} />
+      ) : null}
+
+      <Button title="Show Loader" onPress={displayLoader} />
     </View>
   );
 };
@@ -46,29 +32,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  radioText: {
-    fontSize: 20,
-    color: '#fff',
-  },
-  radio: {
-    height: 40,
-    width: 40,
-    borderColor: 'red',
-    borderWidth: 2,
-    borderRadius: 20,
-    margin: 10,
-  },
-  radioBg: {
-    backgroundColor: 'red',
-    height: 28,
-    width: 28,
-    borderRadius: 20,
-    margin: 4,
-  },
-  radioWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
   },
 });
 
