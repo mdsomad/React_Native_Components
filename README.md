@@ -42,14 +42,15 @@ npm run ios
 yarn ios
 ```
 
-## TouchableHighlight | Style with Buttonin React native Ui Preview
+## Make radio button in React native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th> TouchableHighlight button view</th>
+   <th> Radio button 1 view</th>
+   <th> Radio button 2 view</th>
  
 </tr>
   
@@ -58,6 +59,11 @@ yarn ios
   
 <tr>
   
+<td>
+
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/57ab00b0-d74b-4155-b8ff-201504a4c957" width="270"/>
+
+</td>
 <td>
 
 <img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/57ab00b0-d74b-4155-b8ff-201504a4c957" width="270"/>
@@ -72,27 +78,37 @@ yarn ios
 
 ## Code Example
 ```bash
-import React from 'react';
-import {Text, View, TouchableHighlight, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
 
 const App = () => {
+  const [selectedRadio, setSelectedRadio] = useState(1);
+
   return (
-    <View style={styles}>
-      <TouchableHighlight onPress={() => console.warn('Press Success Button ')}>
-        <Text style={[styles.button, styles.success]}>Success</Text>
-      </TouchableHighlight>
-      <TouchableHighlight onPress={() => console.warn('Press Primary Button')}>
-        <Text style={[styles.button, styles.primary]}>Primary</Text>
-      </TouchableHighlight>
-      <TouchableHighlight onPress={() => console.warn('Press Warning Button ')}>
-        <Text style={[styles.button, styles.warning]}>Warning</Text>
-      </TouchableHighlight>
-      <TouchableHighlight onPress={() => console.warn('Press Error Button ')}>
-        <Text style={[styles.button, styles.error]}>Error</Text>
-      </TouchableHighlight>
-      <TouchableHighlight>
-        <Text style={styles.button}>Button</Text>
-      </TouchableHighlight>
+    <View style={styles.main}>
+
+
+      <TouchableOpacity onPress={() => setSelectedRadio(1)}>
+        <View style={styles.radioWrapper}>
+          <View style={styles.radio}>
+            {selectedRadio === 1 ? <View style={styles.radioBg}></View> : null}
+          </View>
+          <Text style={styles.radioText}> Radio Button 1</Text>
+        </View>
+      </TouchableOpacity>
+
+
+
+      <TouchableOpacity onPress={() => setSelectedRadio(2)}>
+        <View style={styles.radioWrapper}>
+          <View style={styles.radio}>
+            {selectedRadio === 2 ? <View style={styles.radioBg}></View> : null}
+          </View>
+          <Text style={styles.radioText}> Radio Button 2</Text>
+        </View>
+      </TouchableOpacity>
+
+      
     </View>
   );
 };
@@ -100,30 +116,31 @@ const App = () => {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  button: {
-    fontSize: 24,
+  radioText: {
+    fontSize: 20,
     color: '#fff',
-    backgroundColor: 'gray',
-    textAlign: 'center',
-    padding: 10,
-    borderRadius: 10,
+  },
+  radio: {
+    height: 40,
+    width: 40,
+    borderColor: 'red',
+    borderWidth: 2,
+    borderRadius: 20,
     margin: 10,
-    shadowColor: 'red',
-    elevation: 10,
-    shadowOpacity: 1,
   },
-  success: {
-    backgroundColor: 'green',
-  },
-  primary: {
-    backgroundColor: 'blue',
-  },
-  warning: {
-    backgroundColor: 'gold',
-  },
-  error: {
+  radioBg: {
     backgroundColor: 'red',
+    height: 28,
+    width: 28,
+    borderRadius: 20,
+    margin: 4,
+  },
+  radioWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 
