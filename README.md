@@ -61,12 +61,12 @@ yarn ios
   
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/6bead342-a71e-45d5-b118-3236c4c74cb7" width="270"/>
 
 </td>
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/c00d2f25-bdb8-4c5f-90c9-00003a2de1f3" width="270"/>
 
 </td>
 
@@ -75,8 +75,8 @@ yarn ios
 </table>
 
 
-## Code Example
 ```bash
+
 import React, {useState} from 'react';
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
 
