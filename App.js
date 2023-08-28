@@ -1,41 +1,24 @@
-import React, {useState} from 'react';
-import {View, StatusBar, StyleSheet, Button} from 'react-native';
+import React from 'react';
+import {View, Text, Platform} from 'react-native';
 
 const App = () => {
-  const [hide, setHide] = useState(false);
-  const [barStyle, setBarStyle] = useState('default');
-
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor="red" barStyle={barStyle} hidden={hide} />
+    <View>
+      <Text style={{fontSize: 30}}>Platform : {Platform.OS}</Text>
 
-      <View style={styles.button1}>
-        <Button title="Toogle Status bar" onPress={() => setHide(!hide)} />
-      </View>
-      <View style={styles.button2}>
-        <Button
-          title="Update Style"
-          onPress={() => setBarStyle('dark-content')}
-        />
-      </View>
+      {Platform.OS == 'android' ? (
+        <View
+          style={{backgroundColor: 'green', height: 100, width: 100}}></View>
+      ) : (
+        <View style={{backgroundColor: 'red', height: 100, width: 100}}></View>
+      )}
+      <Text style={{color: 'yellow'}}>{JSON.stringify(Platform)}</Text>
+      <Text style={{color: 'red'}}>
+        React Native Version Show :{' '}
+        {JSON.stringify(Platform.constants.reactNativeVersion.minor)}
+      </Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  button1: {
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
-  button2: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    marginTop: 10,
-  },
-});
 
 export default App;

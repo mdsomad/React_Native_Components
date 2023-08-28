@@ -42,16 +42,14 @@ npm run ios
 yarn ios
 ```
 
-## Status Bar Customise in React Native in React native Ui Preview
+## Platform | Check OS in React Native | Operating System Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Status Bar view</th>
-   <th>Status Bar Hide view</th>
-   <th>Status Bar Update Style view</th>
+   <th>Platform | Check OS view</th>
   
 </tr>
   
@@ -62,19 +60,10 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/0f28fe65-a316-426b-bb34-8f0dd7c56216" width="270"/>
+<img src="" width="270"/>
 
 </td>
-<td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/3c900003-2f6c-442b-a7d8-08d036b25eff" width="270"/>
-
-</td>
-<td>
-
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/30e3260a-f354-4ed1-a183-3da15befa158" width="270"/>
-
-</td>
 
 </table>
 
@@ -83,47 +72,31 @@ yarn ios
 ```bash
 
 
-import React, {useState} from 'react';
-import {View, StatusBar, StyleSheet, Button} from 'react-native';
+import React from 'react';
+import {View, Text, Platform} from 'react-native';
 
 const App = () => {
-  const [hide, setHide] = useState(false);
-  const [barStyle, setBarStyle] = useState('default');
-
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor="red" barStyle={barStyle} hidden={hide} />
+    <View>
+      <Text style={{fontSize: 30}}>Platform : {Platform.OS}</Text>
 
-      <View style={styles.button1}>
-        <Button title="Toogle Status bar" onPress={() => setHide(!hide)} />
-      </View>
-      <View style={styles.button2}>
-        <Button
-          title="Update Style"
-          onPress={() => setBarStyle('dark-content')}
-        />
-      </View>
+      {Platform.OS == 'android' ? (
+        <View
+          style={{backgroundColor: 'green', height: 100, width: 100}}></View>
+      ) : (
+        <View style={{backgroundColor: 'red', height: 100, width: 100}}></View>
+      )}
+      <Text style={{color: 'yellow'}}>{JSON.stringify(Platform)}</Text>
+      <Text style={{color: 'red'}}>
+        React Native Version Show :{' '}
+        {JSON.stringify(Platform.constants.reactNativeVersion.minor)}
+      </Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  button1: {
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
-  button2: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    marginTop: 10,
-  },
-});
-
 export default App;
+
 
 
 
