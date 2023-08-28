@@ -41,15 +41,22 @@ npm run ios
 # OR using Yarn
 yarn ios
 ```
+## First install webview npm package 
+```bash
+# Then run the following command
+npx react-native run-android
+```
 
-## Platform | Check OS in React Native | Operating System Ui Preview
+## Webview in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Platform | Check OS view</th>
+   <th>Webview Example 1 view</th>
+   <th>Webview Example 2 view</th>
+   <th>Webview Example 3 view</th>
   
 </tr>
   
@@ -60,7 +67,17 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Learn-/assets/103892160/775fe71f-6141-4a1f-b436-62504675cb29" width="270"/>
+<img src="" width="270"/>
+
+</td>
+<td>
+
+<img src="" width="270"/>
+
+</td>
+<td>
+
+<img src="" width="270"/>
 
 </td>
 
@@ -83,29 +100,16 @@ yarn ios
 
 
 import React from 'react';
-import {View, Text, Platform} from 'react-native';
+import {WebView} from 'react-native-webview';
 
 const App = () => {
   return (
-    <View>
-      <Text style={{fontSize: 30}}>Platform : {Platform.OS}</Text>
-
-      {Platform.OS == 'android' ? (
-        <View
-          style={{backgroundColor: 'green', height: 100, width: 100}}></View>
-      ) : (
-        <View style={{backgroundColor: 'red', height: 100, width: 100}}></View>
-      )}
-      <Text style={{color: 'yellow'}}>{JSON.stringify(Platform)}</Text>
-      <Text style={{color: 'red'}}>
-        React Native Version Show :{' '}
-        {JSON.stringify(Platform.constants.reactNativeVersion.minor)}
-      </Text>
-    </View>
+    <WebView source={{uri: 'https://github.com/mdsomad'}} style={{flex: 1}} />
   );
 };
 
 export default App;
+
 
 
 
