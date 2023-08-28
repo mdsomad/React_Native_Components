@@ -67,26 +67,22 @@ npx react-native run-android
   
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/0bb008a4-f517-4217-9404-4483917df0f4" width="280"/>
 
 </td>
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/8b95c886-8846-46a8-9df3-9c17c6ce1836" width="280"/>
 
 </td>
 <td>
 
-<img src="" width="270"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/7f215fbf-6aec-4566-9d22-ae372aecd3e3" width="280"/>
 
 </td>
 
 
 </table>
-
-
-
-
 
 
 
