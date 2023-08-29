@@ -61,15 +61,15 @@ npm start ——clean—cache
 
 - [Using This Api Link check now](https://jsonplaceholder.typicode.com/posts)
 
-## List with API Data | Get List with API in React Native Ui Preview
+## FlatList with API Data | use flat list with API in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>List Api Call view</th>
-   <th>List Api Call view 2</th>
+   <th>FlatList Api Data Show view</th>
+   <th>FlatList Api Data Show view 2</th>
 
 </tr>
   
@@ -80,12 +80,12 @@ npm start ——clean—cache
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/27528f43-2115-4189-bede-67b162260df0" width="280"/>
+<img src="" width="280"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/ebef4b0a-89b7-42f3-9f37-01f86bb93877" width="280"/>
+<img src="" width="280"/>
 
 </td>
 
@@ -98,7 +98,7 @@ npm start ——clean—cache
 ```bash
 
 import React, {useEffect, useState} from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -115,32 +115,36 @@ const App = () => {
   }, []);
 
   return (
-    <ScrollView>
+    <View>
       <Text style={{fontSize: 40, textAlign: 'center'}}>
-        List with API CALL
+        FlatList with API Data
       </Text>
-      {data.length
-        ? data.map(item => (
+      {data.length ? (
+        <FlatList
+          data={data}
+          renderItem={({item}) => (
             <View
               style={{
                 padding: 10,
                 borderBottomColor: '#ccc',
                 borderBottomWidth: 2,
               }}>
-              <Text style={{fontSize: 20, backgroundColor: 'red'}}>
+              <Text style={{fontSize: 20, backgroundColor: 'green'}}>
                 UserId : {item.userId}
               </Text>
               <Text style={{fontSize: 20}}>Id : {item.id}</Text>
               <Text style={{fontSize: 20}}>Title : {item.title}</Text>
               <Text style={{fontSize: 20}}>Body : {item.body}</Text>
             </View>
-          ))
-        : null}
-    </ScrollView>
+          )}
+        />
+      ) : null}
+    </View>
   );
 };
 
 export default App;
+
 
 
 ```
