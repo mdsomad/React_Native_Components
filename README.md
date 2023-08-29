@@ -42,15 +42,17 @@ npm run ios
 yarn ios
 ```
 
-## Button and component in Stack Navigation | React Navigation in React Native Ui Preview
+## Pass data between Screens in Stack Navigation | React Navigation in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Login Screen Appbar Button add view</th>
-   <th>Login Screen Appbar TextInput add view</th>
+   <th>Login Screen Send Data view 1</th>
+   <th>Login Screen Send Data view 2</th>
+   <th>Home Screen Receive Data view 1</th>
+   <th>Home Screen Receive Data view 2</th>
   
 </tr>
   
@@ -61,12 +63,22 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/24ac9d48-edd2-4886-884c-8c2b8b1bf803" width="280"/>
+<img src="" width="280"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/4221d960-6d3e-4ef4-b626-0754014173b9" width="280"/>
+<img src="" width="280"/>
+
+</td>
+<td>
+
+<img src="" width="280"/>
+
+</td>
+<td>
+
+<img src="" width="280"/>
 
 </td>
 
@@ -139,6 +151,68 @@ const Header = () => {
 export default App;
 
 
+
+
+```
+
+
+
+
+
+
+## Login Screen Code Example
+```bash
+import React, {useState} from 'react';
+import {View, Text, Button, TextInput} from 'react-native';
+export const LoginScreen = props => {
+  const [name, setName] = useState('');
+  const age = 20;
+
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text style={{fontSize: 30, color: 'black'}}>Login Screen</Text>
+      <TextInput
+        style={{
+          borderColor: 'black',
+          borderWidth: 2,
+          color: 'black',
+          fontSize: 20,
+        }}
+        onChangeText={text => setName(text)}
+        placeholder="Enter name"
+      />
+
+      <Button
+        title="Go to homeS"
+        onPress={
+          () => props.navigation.navigate('Home', {name: name, age: age}) //* <-- 2 tarike se data bhej sakte Hain
+        }
+      />
+    </View>
+  );
+};
+
+
+
+
+
+
+
+
+```
+## Home Screen Code Example
+```bash
+import {View, Text,} from 'react-native';
+ export const HomeScreen = (props) => {
+  const {name,age} = props.route.params
+    return (
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text style={{fontSize: 30, color: 'black'}}>Home Screen</Text>
+        <Text style={{fontSize: 30, color: 'red'}}>Name : {name}</Text>
+        <Text style={{fontSize: 30, color: 'red'}}>Age : {age}</Text>
+      </View>
+    );
+  };
 
 
 ```
