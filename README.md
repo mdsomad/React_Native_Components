@@ -45,7 +45,7 @@ yarn ios
 
 ## Tab Navigation Related commands
 ### First install library Tab navigation
-- [Navigation react documentation website link](https://reactnavigation.org/docs/tab-based-navigation)
+- [Navigation react documentation website link](https://reactnavigation.org/docs/material-top-tab-navigator)
 ```bash
 # Then run this command
 npx react-native run-android
@@ -56,17 +56,17 @@ npx react-native run-android
 ```bash
 # Then run this command
 npm start ——clean—cache
-````
+```
 
-## Tab Navigation | React Navigation in React Native Ui Preview
+## Top Tab Navigation | React Navigation in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Tab Navigator home view</th>
-   <th>Tab Navigator settings view</th>
+   <th> Top Tab Bar home view</th>
+   <th> Top Tab Bar settings view</th>
 
 </tr>
   
@@ -77,12 +77,12 @@ npm start ——clean—cache
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/2228d9a2-756d-4441-89bd-fc77f50698d5" width="280"/>
+<img src="" width="280"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/73c20acd-6a82-40ad-8454-5b0f78f47d30" width="280"/>
+<img src="" width="280"/>
 
 </td>
 >
@@ -100,9 +100,9 @@ npm start ——clean—cache
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {View, Text} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 const App = () => {
   return (
