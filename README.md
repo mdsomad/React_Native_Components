@@ -76,7 +76,7 @@ npm start ——clean—cache
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/0475e69f-c666-4cbe-8e7e-25f75b2df73a" width="280"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/59f173a0-2c43-41e2-932f-ac0bbeb4be6b" width="280"/>
 
 </td>
 
