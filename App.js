@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <View>
-      <Text style={{fontSize: 40, textAlign: 'center'}}>API CALL</Text>
+      <Text style={{fontSize: 40, textAlign: 'center'}}>First API CALL</Text>
       {data ? (
         <View>
           <Text>UserId : {data.userId}</Text>
