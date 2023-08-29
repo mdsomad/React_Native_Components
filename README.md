@@ -58,6 +58,9 @@ npx react-native run-android
 npm start ——clean—cache
 ```
 
+
+- [Using This Api Link check now](https://jsonplaceholder.typicode.com/posts/1)
+
 ##  API Call | Fetch Rest API in React Native Ui Preview
 
 <table>
