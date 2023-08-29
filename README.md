@@ -80,19 +80,17 @@ npm start ——clean—cache
   
 <td>
 
-<img src="" width="280"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/27528f43-2115-4189-bede-67b162260df0" width="280"/>
 
 </td>
 <td>
 
-<img src="" width="280"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/ebef4b0a-89b7-42f3-9f37-01f86bb93877" width="280"/>
 
 </td>
 
 
 </table>
-
-
 
 
 ## Code Example
