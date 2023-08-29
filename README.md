@@ -59,16 +59,17 @@ npm start ——clean—cache
 ```
 
 
-- [Using This Api Link check now](https://jsonplaceholder.typicode.com/posts/1)
+- [Using This Api Link check now](https://jsonplaceholder.typicode.com/posts)
 
-##  API Call | Fetch Rest API in React Native Ui Preview
+## List with API Data | Get List with API in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th> First Api Call view</th>
+   <th>List Api Call view</th>
+   <th>List Api Call view 2</th>
 
 </tr>
   
@@ -79,7 +80,12 @@ npm start ——clean—cache
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/59f173a0-2c43-41e2-932f-ac0bbeb4be6b" width="280"/>
+<img src="" width="280"/>
+
+</td>
+<td>
+
+<img src="" width="280"/>
 
 </td>
 
@@ -94,13 +100,13 @@ npm start ——clean—cache
 ```bash
 
 import React, {useEffect, useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 
 const App = () => {
-  const [data, setData] = useState(undefined);
+  const [data, setData] = useState([]);
 
   const getApiData = async () => {
-    const url = 'https://jsonplaceholder.typicode.com/posts/1';
+    const url = 'https://jsonplaceholder.typicode.com/posts';
     let result = await fetch(url);
     result = await result.json();
     setData(result);
@@ -111,17 +117,28 @@ const App = () => {
   }, []);
 
   return (
-    <View>
-      <Text style={{fontSize: 40, textAlign: 'center'}}>API CALL</Text>
-      {data ? (
-        <View>
-          <Text>UserId : {data.userId}</Text>
-          <Text>Id : {data.id}</Text>
-          <Text>Title : {data.title}</Text>
-          <Text>Body : {data.body}</Text>
-        </View>
-      ) : null}
-    </View>
+    <ScrollView>
+      <Text style={{fontSize: 40, textAlign: 'center'}}>
+        List with API CALL
+      </Text>
+      {data.length
+        ? data.map(item => (
+            <View
+              style={{
+                padding: 10,
+                borderBottomColor: '#ccc',
+                borderBottomWidth: 2,
+              }}>
+              <Text style={{fontSize: 20, backgroundColor: 'red'}}>
+                UserId : {item.userId}
+              </Text>
+              <Text style={{fontSize: 20}}>Id : {item.id}</Text>
+              <Text style={{fontSize: 20}}>Title : {item.title}</Text>
+              <Text style={{fontSize: 20}}>Body : {item.body}</Text>
+            </View>
+          ))
+        : null}
+    </ScrollView>
   );
 };
 
