@@ -1,55 +1,35 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {Button, TextInput} from 'react-native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {LoginScreen} from './Components/LoginScreen';
-import {HomeScreen} from './Components/HomeScreen';
+import {View, Text} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
-  const buttonAction = () => {
-    console.warn('Button Press');
-  };
-
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{                  //* <-- All Screen ka Appbar Mein apply hota styles
-          headerStyle: {
-            backgroundColor: 'blue',
-          },
-          headerTintColor: 'yellow',
-          headerTitleStyle: {
-            fontSize: 30,
-          },
-        }}>
-        <Stack.Screen
-          name="login"
-          component={LoginScreen}
-          options={{                    //* <-- Only Single screen ka Appbar Mein apply hota styles
-            title: 'User Login',
-            headerTitle: () => (
-              <Button title="AppBar left side but add" onPress={buttonAction} />
-            ),
-            headerRight: () => <Header />,
-            headerStyle: {
-              backgroundColor: 'orange',
-            },
-            headerTintColor: 'red',
-            headerTitleStyle: {
-              fontSize: 20,
-            },
-          }}
-        />
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
-const Header = () => {
-  return <TextInput placeholder="Enter name" />;
+const HomeScreen = () => {
+  return (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 30, color: 'black'}}>Home!</Text>
+    </View>
+  );
+};
+
+const SettingsScreen = () => {
+  return (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 30, color: 'black'}}>Settings!</Text>
+    </View>
+  );
 };
 
 export default App;

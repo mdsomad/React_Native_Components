@@ -42,18 +42,29 @@ npm run ios
 yarn ios
 ```
 
-## Pass data between Screens in Stack Navigation | React Navigation in React Native Ui Preview
+
+## Tab Navigation Related commands
+````bash
+# using npm
+npx react-native run-android
+
+
+
+```bash
+# using npm
+npm start ——clean—cache
+````
+
+## Tab Navigation | React Navigation in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Login Screen Send Data view 1</th>
-   <th>Login Screen Send Data view 2</th>
-   <th>Home Screen Receive Data view 1</th>
-   <th>Home Screen Receive Data view 2</th>
-  
+   <th>Tab Navigator view 1</th>
+   <th>Tab Navigator view 2</th>
+
 </tr>
   
   
@@ -63,30 +74,17 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/4b934891-93d5-47de-a75a-1349d00f470d" width="280"/>
+<img src="" width="280"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/05688e8e-594a-42d6-9444-03b02a92fdf4" width="280"/>
+<img src="" width="280"/>
 
 </td>
-<td>
-
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/d3422da4-acb2-47e0-b1dc-bacc40f76fd5" width="280"/>
-
-</td>
-<td>
-
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/c577f050-9a02-4663-862c-abfb4cf6913b" width="280"/>
-
-</td>
+>
 
 </table>
-
-
-
-
 
 ## Code Example
 
@@ -94,123 +92,40 @@ yarn ios
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {Button, TextInput} from 'react-native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {LoginScreen} from './Components/LoginScreen';
-import {HomeScreen} from './Components/HomeScreen';
+import {View, Text} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
-  const buttonAction = () => {
-    console.warn('Button Press');
-  };
-
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{                  //* <-- All Screen ka Appbar Mein apply hota styles
-          headerStyle: {
-            backgroundColor: 'blue',
-          },
-          headerTintColor: 'yellow',
-          headerTitleStyle: {
-            fontSize: 30,
-          },
-        }}>
-        <Stack.Screen
-          name="login"
-          component={LoginScreen}
-          options={{                    //* <-- Only Single screen ka Appbar Mein apply hota styles
-            title: 'User Login',
-            headerTitle: () => (
-              <Button title="AppBar left side but add" onPress={buttonAction} />
-            ),
-            headerRight: () => <Header />,
-            headerStyle: {
-              backgroundColor: 'orange',
-            },
-            headerTintColor: 'red',
-            headerTitleStyle: {
-              fontSize: 20,
-            },
-          }}
-        />
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
-const Header = () => {
-  return <TextInput placeholder="Enter name" />;
+const HomeScreen = () => {
+  return (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 30, color: 'black'}}>Home!</Text>
+    </View>
+  );
+};
+
+const SettingsScreen = () => {
+  return (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize: 30, color: 'black'}}>Settings!</Text>
+    </View>
+  );
 };
 
 export default App;
 
 
-
-
 ```
 
-
-
-
-
-
-## Login Screen Code Example
-```bash
-import React, {useState} from 'react';
-import {View, Text, Button, TextInput} from 'react-native';
-export const LoginScreen = props => {
-  const [name, setName] = useState('');
-  const age = 20;
-
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text style={{fontSize: 30, color: 'black'}}>Login Screen</Text>
-      <TextInput
-        style={{
-          borderColor: 'black',
-          borderWidth: 2,
-          color: 'black',
-          fontSize: 20,
-        }}
-        onChangeText={text => setName(text)}
-        placeholder="Enter name"
-      />
-
-      <Button
-        title="Go to homeS"
-        onPress={
-          () => props.navigation.navigate('Home', {name: name, age: age}) //* <-- 2 tarike se data bhej sakte Hain
-        }
-      />
-    </View>
-  );
-};
-
-
-
-
-
-
-
-
-```
-## Home Screen Code Example
-```bash
-import {View, Text,} from 'react-native';
- export const HomeScreen = (props) => {
-  const {name,age} = props.route.params
-    return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text style={{fontSize: 30, color: 'black'}}>Home Screen</Text>
-        <Text style={{fontSize: 30, color: 'red'}}>Name : {name}</Text>
-        <Text style={{fontSize: 30, color: 'red'}}>Age : {age}</Text>
-      </View>
-    );
-  };
-
-
-```
