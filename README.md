@@ -58,15 +58,14 @@ npx react-native run-android
 npm start ——clean—cache
 ```
 
-## Top Tab Navigation | React Navigation in React Native Ui Preview
+##  API Call | Fetch Rest API in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th> Top Tab Bar home view</th>
-   <th> Top Tab Bar settings view</th>
+   <th> First Api Call view</th>
 
 </tr>
   
@@ -80,12 +79,7 @@ npm start ——clean—cache
 <img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/0475e69f-c666-4cbe-8e7e-25f75b2df73a" width="280"/>
 
 </td>
-<td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/bdae4887-e1de-4439-aff8-7de337761eed" width="280"/>
-
-</td>
->
 
 </table>
 
@@ -96,36 +90,34 @@ npm start ——clean—cache
 
 ```bash
 
-import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import React, {useEffect, useState} from 'react';
 import {View, Text} from 'react-native';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-
-const Tab = createMaterialTopTabNavigator();
 
 const App = () => {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
-};
+  const [data, setData] = useState(undefined);
 
-const HomeScreen = () => {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={{fontSize: 30, color: 'black'}}>Home!</Text>
-    </View>
-  );
-};
+  const getApiData = async () => {
+    const url = 'https://jsonplaceholder.typicode.com/posts/1';
+    let result = await fetch(url);
+    result = await result.json();
+    setData(result);
+  };
 
-const SettingsScreen = () => {
+  useEffect(() => {
+    getApiData();
+  }, []);
+
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={{fontSize: 30, color: 'black'}}>Settings!</Text>
+    <View>
+      <Text style={{fontSize: 40, textAlign: 'center'}}>API CALL</Text>
+      {data ? (
+        <View>
+          <Text>UserId : {data.userId}</Text>
+          <Text>Id : {data.id}</Text>
+          <Text>Title : {data.title}</Text>
+          <Text>Body : {data.body}</Text>
+        </View>
+      ) : null}
     </View>
   );
 };
