@@ -44,14 +44,17 @@ yarn ios
 
 
 ## Tab Navigation Related commands
-````bash
-# using npm
+### First install library Tab navigation
+- [Navigation react documentation website link](https://reactnavigation.org/docs/tab-based-navigation)
+```bash
+# Then run this command
 npx react-native run-android
+```
 
 
 
 ```bash
-# using npm
+# Then run this command
 npm start ——clean—cache
 ````
 
@@ -62,8 +65,8 @@ npm start ——clean—cache
   
 <tr>                    
    
-   <th>Tab Navigator view 1</th>
-   <th>Tab Navigator view 2</th>
+   <th>Tab Navigator home view</th>
+   <th>Tab Navigator settings view</th>
 
 </tr>
   
@@ -74,17 +77,21 @@ npm start ——clean—cache
   
 <td>
 
-<img src="" width="280"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/2228d9a2-756d-4441-89bd-fc77f50698d5" width="280"/>
 
 </td>
 <td>
 
-<img src="" width="280"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/73c20acd-6a82-40ad-8454-5b0f78f47d30" width="280"/>
 
 </td>
 >
 
 </table>
+
+
+
+
 
 ## Code Example
 
