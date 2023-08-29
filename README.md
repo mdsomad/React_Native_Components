@@ -42,16 +42,15 @@ npm run ios
 yarn ios
 ```
 
-## Style in Stack Navigation | React Navigation in React Native Ui Preview
+## Button and component in Stack Navigation | React Navigation in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Login Screen Appbar Style view</th>
-   <th>Home Screen view</th>
-
+   <th>Login Screen Appbar Button add view</th>
+   <th>Login Screen Appbar TextInput add view</th>
   
 </tr>
   
@@ -62,18 +61,24 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/aca674f0-aefc-4056-8a4c-592330cfb329" width="280"/>
+<img src="" width="280"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/04668230-9275-44fe-8203-63151b2af354" width="280"/>
+<img src="" width="280"/>
 
 </td>
 
-
-
 </table>
+
+
+
+
+
+
+
+
 
 
 
@@ -83,16 +88,22 @@ yarn ios
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {View, Text, Button} from 'react-native';
+import {Button, TextInput} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {LoginScreen} from './Components/LoginScreen';
+import {HomeScreen} from './Components/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  const buttonAction = () => {
+    console.warn('Button Press');
+  };
+
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{               //* <-- All Screen ka Appbar Mein apply hota styles
+        screenOptions={{                  //* <-- All Screen ka Appbar Mein apply hota styles
           headerStyle: {
             backgroundColor: 'blue',
           },
@@ -104,10 +115,14 @@ const App = () => {
         <Stack.Screen
           name="login"
           component={LoginScreen}
-          options={{                   //* <-- Only Single screen ka Appbar Mein apply hota styles
+          options={{                    //* <-- Only Single screen ka Appbar Mein apply hota styles
             title: 'User Login',
+            headerTitle: () => (
+              <Button title="AppBar left side but add" onPress={buttonAction} />
+            ),
+            headerRight: () => <Header />,
             headerStyle: {
-              backgroundColor: 'blue',
+              backgroundColor: 'orange',
             },
             headerTintColor: 'red',
             headerTitleStyle: {
@@ -121,26 +136,12 @@ const App = () => {
   );
 };
 
-const HomeScreen = () => {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text style={{fontSize: 30, color: 'black'}}>Home Screen</Text>
-    </View>
-  );
-};
-const LoginScreen = props => {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text style={{fontSize: 30, color: 'black'}}>Login Screen</Text>
-      <Button
-        title="Go to homeS"
-        onPress={() => props.navigation.navigate('Home')}
-      />
-    </View>
-  );
+const Header = () => {
+  return <TextInput placeholder="Enter name" />;
 };
 
 export default App;
+
 
 
 
