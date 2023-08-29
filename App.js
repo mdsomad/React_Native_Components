@@ -6,11 +6,32 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="login" component={LoginScreen} />
+      <Stack.Navigator
+        screenOptions={{               //* <-- All Screen ka Appbar Mein apply hota styles
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerTintColor: 'yellow',
+          headerTitleStyle: {
+            fontSize: 30,
+          },
+        }}>
+        <Stack.Screen
+          name="login"
+          component={LoginScreen}
+          options={{                   //* <-- Only Single screen ka Appbar Mein apply hota styles
+            title: 'User Login',
+            headerStyle: {
+              backgroundColor: 'blue',
+            },
+            headerTintColor: 'red',
+            headerTitleStyle: {
+              fontSize: 20,
+            },
+          }}
+        />
         <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>

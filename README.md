@@ -42,14 +42,14 @@ npm run ios
 yarn ios
 ```
 
-## Navigation in React Native Ui Preview
+## Style in Stack Navigation | React Navigation in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Login Screen view</th>
+   <th>Login Screen Appbar Style view</th>
    <th>Home Screen view</th>
 
   
@@ -62,12 +62,12 @@ yarn ios
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/ded6ad86-62de-404d-8dfd-34d7580a6d00" width="280"/>
+<img src="" width="280"/>
 
 </td>
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/348fc1eb-967e-44b6-9f13-39401fc3f30d" width="280"/>
+<img src="" width="280"/>
 
 </td>
 
@@ -88,12 +88,32 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-
-
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="login" component={LoginScreen} />
+      <Stack.Navigator
+        screenOptions={{               //* <-- All Screen ka Appbar Mein apply hota styles
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerTintColor: 'yellow',
+          headerTitleStyle: {
+            fontSize: 30,
+          },
+        }}>
+        <Stack.Screen
+          name="login"
+          component={LoginScreen}
+          options={{                   //* <-- Only Single screen ka Appbar Mein apply hota styles
+            title: 'User Login',
+            headerStyle: {
+              backgroundColor: 'blue',
+            },
+            headerTintColor: 'red',
+            headerTitleStyle: {
+              fontSize: 20,
+            },
+          }}
+        />
         <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
@@ -120,6 +140,7 @@ const LoginScreen = props => {
 };
 
 export default App;
+
 
 
 ```
