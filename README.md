@@ -68,14 +68,14 @@ http://10.0.2.2:3000/users
 
 - [Using This Api Link check now](https://jsonplaceholder.typicode.com/posts)
 
-## Fetch data from JSON server API in React Native Ui Preview
+## Post api in React-native in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>JSON server API Data view</th>
+   <th>Post api Data Response view</th>
 
 </tr>
   
@@ -100,47 +100,38 @@ http://10.0.2.2:3000/users
 
 ```bash
 
-import React, {useEffect, useState} from 'react';
-import {View, Text} from 'react-native';
+import React from 'react';
+import {View, Text, Button} from 'react-native';
 
 const App = () => {
-  const [data, setData] = useState([]);
+  const postApiData = async () => {
+    const data = {
+      name: 'Amir',
+      age: 18,
+      email: 'amir@gmail.com',
+      id: 3,
+    };
 
-  const getApiData = async () => {
     const url = 'http://10.0.2.2:3000/users';
-    let result = await fetch(url);
+    let result = await fetch(url, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data),
+    });
     result = await result.json();
-    setData(result);
+    console.warn(result);
   };
-
-  useEffect(() => {
-    getApiData();
-  }, []);
 
   return (
     <View>
-      <Text style={{fontSize: 40, textAlign: 'center'}}>
-        Call JSON server API
-      </Text>
-      {data.length
-        ? data.map(item => (
-            <View
-              style={{
-                padding: 10,
-                margin: 10,
-                borderColor: 'yellow',
-                borderWidth: 2,
-              }}>
-              <Text style={{fontSize: 20}}>Name : {item.name}</Text>
-              <Text style={{fontSize: 20}}>Age : {item.age}</Text>
-              <Text style={{fontSize: 20}}>Email : {item.email}</Text>
-            </View>
-          ))
-        : null}
+      <Text style={{fontSize: 40, textAlign: 'center'}}>Post API Call</Text>
+
+      <Button title="Post Data" onPress={postApiData} />
     </View>
   );
 };
 
+export default App;
 
 
 
