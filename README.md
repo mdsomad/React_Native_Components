@@ -66,8 +66,6 @@ http://10.0.2.2:3000/users
 ```
 
 
-- [Using This Api Link check now](https://jsonplaceholder.typicode.com/posts)
-
 ## Post api in React-native in React Native Ui Preview
 
 <table>
@@ -86,7 +84,7 @@ http://10.0.2.2:3000/users
   
 <td>
 
-<img src="" width="280"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/931a46a9-89d3-4e0b-9e7d-01c143cd23a8" width="280"/>
 
 </td>
 
