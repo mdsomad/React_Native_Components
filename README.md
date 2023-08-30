@@ -43,11 +43,9 @@ yarn ios
 ```
 
 
-## Tab Navigation Related commands
-### First install library Tab navigation
-- [Navigation react documentation website link](https://reactnavigation.org/docs/material-top-tab-navigator)
-```bash
+
 # Then run this command
+```bash
 npx react-native run-android
 ```
 
@@ -59,17 +57,25 @@ npm start ——clean—cache
 ```
 
 
+
+```bash
+# JSON server API command
+ipconfig
+json-server --host 0.0.0.0 db.json
+http://10.0.2.2:3000/users
+```
+
+
 - [Using This Api Link check now](https://jsonplaceholder.typicode.com/posts)
 
-## FlatList with API Data | use flat list with API in React Native Ui Preview
+## Fetch data from JSON server API in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>FlatList Api Data Show view</th>
-   <th>FlatList Api Data Show view 2</th>
+   <th>JSON server API Data view</th>
 
 </tr>
   
@@ -80,14 +86,10 @@ npm start ——clean—cache
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/4af6fb82-a159-4b4b-a018-d05707d06d39" width="280"/>
+<img src="" width="280"/>
 
 </td>
-<td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/435ff87d-424e-4187-9e74-b7e933aba13d" width="280"/>
-
-</td>
 
 
 </table>
@@ -99,13 +101,13 @@ npm start ——clean—cache
 ```bash
 
 import React, {useEffect, useState} from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, Text} from 'react-native';
 
 const App = () => {
   const [data, setData] = useState([]);
 
   const getApiData = async () => {
-    const url = 'https://jsonplaceholder.typicode.com/posts';
+    const url = 'http://10.0.2.2:3000/users';
     let result = await fetch(url);
     result = await result.json();
     setData(result);
@@ -118,33 +120,27 @@ const App = () => {
   return (
     <View>
       <Text style={{fontSize: 40, textAlign: 'center'}}>
-        FlatList with API Data
+        Call JSON server API
       </Text>
-      {data.length ? (
-        <FlatList
-          data={data}
-          renderItem={({item}) => (
+      {data.length
+        ? data.map(item => (
             <View
               style={{
                 padding: 10,
-                borderBottomColor: '#ccc',
-                borderBottomWidth: 2,
+                margin: 10,
+                borderColor: 'yellow',
+                borderWidth: 2,
               }}>
-              <Text style={{fontSize: 20, backgroundColor: 'green'}}>
-                UserId : {item.userId}
-              </Text>
-              <Text style={{fontSize: 20}}>Id : {item.id}</Text>
-              <Text style={{fontSize: 20}}>Title : {item.title}</Text>
-              <Text style={{fontSize: 20}}>Body : {item.body}</Text>
+              <Text style={{fontSize: 20}}>Name : {item.name}</Text>
+              <Text style={{fontSize: 20}}>Age : {item.age}</Text>
+              <Text style={{fontSize: 20}}>Email : {item.email}</Text>
             </View>
-          )}
-        />
-      ) : null}
+          ))
+        : null}
     </View>
   );
 };
 
-export default App;
 
 
 
