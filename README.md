@@ -66,14 +66,14 @@ http://10.0.2.2:3000/users
 ```
 
 
-##  Simple Form validations in React Native Ui Preview
+##  List with API data in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Input fields and form validations view</th>
+   <th>Data Show view</th>
 
 </tr>
   
@@ -84,7 +84,7 @@ http://10.0.2.2:3000/users
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/92c04825-6109-4f34-a3cb-31fbd5328fe7" width="280"/>
+<img src="" width="280"/>
 
 </td>
 
@@ -98,104 +98,74 @@ http://10.0.2.2:3000/users
 
 ```bash
 
-import React, {useState} from 'react';
-import {View, Text, Button, TextInput, StyleSheet} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, Button, StyleSheet} from 'react-native';
 
 const App = () => {
-  const [name, setName] = useState('');
-  const [age, setAge] = useState(0);
-  const [email, setEmail] = useState('');
+  const [data, setData] = useState([]);
 
-  const [nameError, setNameError] = useState(false);
-  const [ageError, setAgeError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-
-  const postApiData = async () => {
-    if (!name) {
-      setNameError(true);
-    } else {
-      setNameError(false);
-    }
-
-    if (!age) {
-      setAgeError(true);
-    } else {
-      setAgeError(false);
-    }
-
-    if (!email) {
-      setEmailError(true);
-    } else {
-      setEmailError(false);
-    }
-
-    if (!name || !email || !age) {
-      return false;
-    }
-
-    console.warn('Next');
-
+  const getApiData = async () => {
     const url = 'http://10.0.2.2:3000/users';
-    let result = await fetch(url, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({name, age, email}),
-    });
+    let result = await fetch(url);
     result = await result.json();
+    setData(result);
     console.warn(result);
   };
 
-  return (
-    <View>
-      <Text style={{fontSize: 30, textAlign: 'center'}}>
-        Post API with Input Field data
-      </Text>
+  useEffect(() => {
+    getApiData();
+  }, []);
 
-      <TextInput
-        style={styles.input}
-        placeholder="Enter a name"
-        onChangeText={text => setName(text)}
-        value={name}
-      />
-      {nameError ? (
-        <Text style={styles.errorText}>Please enter valid name</Text>
-      ) : null}
-      <TextInput
-        style={styles.input}
-        placeholder="Enter a age"
-        onChangeText={text => setAge(text)}
-        value={age}
-      />
-      {ageError ? (
-        <Text style={styles.errorText}>Please enter valid age</Text>
-      ) : null}
-      <TextInput
-        style={styles.input}
-        placeholder="Enter a email"
-        onChangeText={text => setEmail(text)}
-        value={email}
-      />
-      {emailError ? (
-        <Text style={styles.errorText}>Please enter valid email</Text>
-      ) : null}
-      <Button title="Post Data" onPress={postApiData} />
+  return (
+    <View style={styles.container}>
+      <View style={styles.dataWrapper}>
+        <View style={{flex: 1}}>
+          <Text style={{color: 'black', fontWeight: 'bold'}}>Name</Text>
+        </View>
+        <View style={{flex: 2}}>
+          <Text style={{color: 'black', fontWeight: 'bold'}}>Age</Text>
+        </View>
+        <View style={{flex: 1.5}}>
+          <Text style={{color: 'black', fontWeight: 'bold'}}>Operations</Text>
+        </View>
+      </View>
+
+      {data.length
+        ? data.map(item => (
+            <View style={styles.dataWrapper}>
+              <View style={{flex: 1}}>
+                <Text style={{color: 'black'}}>{item.name}</Text>
+              </View>
+              <View style={{flex: 1}}>
+                <Text style={{color: 'black'}}>{item.age}</Text>
+              </View>
+              <View style={{flex: 1}}>
+                <Button title="Delete" />
+              </View>
+              <View style={{flex: 1}}>
+                <Button title="Update" />
+              </View>
+            </View>
+          ))
+        : null}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  input: {
-    borderColor: 'yellow',
-    borderWidth: 2,
-    margin: 20,
-    padding: 10,
-    marginBottom: 5,
+  container: {
+    flex: 1,
   },
-  errorText: {
-    color: 'red',
-    marginLeft: 20,
+  dataWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: 'orange',
+    margin: 5,
+    padding: 10,
   },
 });
+
+export default App;
 
 export default App;
 
