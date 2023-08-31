@@ -73,7 +73,8 @@ http://10.0.2.2:3000/users
   
 <tr>                    
    
-   <th>Data Show view</th>
+   <th>Akif User not deleted view</th>
+   <th>Akif User deleted view</th>
 
 </tr>
   
@@ -84,7 +85,12 @@ http://10.0.2.2:3000/users
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/10840b3b-e2c3-46b8-8397-c0432d097b36" width="280"/>
+<img src="" width="280"/>
+
+</td>
+<td>
+
+<img src="" width="280"/>
 
 </td>
 
@@ -98,7 +104,6 @@ http://10.0.2.2:3000/users
 
 
 ```bash
-
 import React, {useEffect, useState} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
@@ -110,7 +115,19 @@ const App = () => {
     let result = await fetch(url);
     result = await result.json();
     setData(result);
-    console.warn(result);
+  };
+
+  const deleteUser = async id => {
+    const url = 'http://10.0.2.2:3000/users';
+    let result = await fetch(`${url}/${id}`, {
+      method: 'delete',
+    });
+    result = await result.json();
+
+    if (result) {
+      console.warn('User deleted successfully');
+      getApiData();
+    }
   };
 
   useEffect(() => {
@@ -141,7 +158,7 @@ const App = () => {
                 <Text style={{color: 'black'}}>{item.age}</Text>
               </View>
               <View style={{flex: 1}}>
-                <Button title="Delete" />
+                <Button title="Delete" onPress={() => deleteUser(item.id)} />
               </View>
               <View style={{flex: 1}}>
                 <Button title="Update" />
@@ -165,8 +182,6 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
-
-export default App;
 
 export default App;
 

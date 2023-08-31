@@ -9,7 +9,19 @@ const App = () => {
     let result = await fetch(url);
     result = await result.json();
     setData(result);
-    console.warn(result);
+  };
+
+  const deleteUser = async id => {
+    const url = 'http://10.0.2.2:3000/users';
+    let result = await fetch(`${url}/${id}`, {
+      method: 'delete',
+    });
+    result = await result.json();
+
+    if (result) {
+      console.warn('User deleted successfully');
+      getApiData();
+    }
   };
 
   useEffect(() => {
@@ -40,7 +52,7 @@ const App = () => {
                 <Text style={{color: 'black'}}>{item.age}</Text>
               </View>
               <View style={{flex: 1}}>
-                <Button title="Delete" />
+                <Button title="Delete" onPress={() => deleteUser(item.id)} />
               </View>
               <View style={{flex: 1}}>
                 <Button title="Update" />
