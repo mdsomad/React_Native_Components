@@ -43,7 +43,13 @@ yarn ios
 ```
 
 
-
+- [Async Storage installation packages link](https://react-native-async-storage.github.io/async-storage/docs/install/)
+- [Async Storage Usage link](https://react-native-async-storage.github.io/async-storage/docs/usage)
+# Async Storage Install command
+```bash
+# With npm
+npm install @react-native-async-storage/async-storage
+```
 # Then run this command
 ```bash
 npx react-native run-android
@@ -58,22 +64,14 @@ npm start ——clean—cache
 
 
 
-```bash
-# JSON server API command
-ipconfig
-json-server --host 0.0.0.0 db.json
-http://10.0.2.2:3000/users
-```
-
-
-## Ref with example focus in React Native Ui Preview
+## Async Storage in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Ref focus view</th>
+   <th>Async Storage Data Set & Get view</th>
 
 </tr>
   
@@ -84,7 +82,7 @@ http://10.0.2.2:3000/users
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/2be73e42-7bea-4ba4-816e-a776a8ebc509" width="280"/>
+<img src="" width="280"/>
 
 </td>
 
@@ -101,41 +99,45 @@ http://10.0.2.2:3000/users
 ```bash
 
 
-import React, {useRef} from 'react';
-import {View, Button, StyleSheet, TextInput} from 'react-native';
+import React from 'react';
+import {View, Text, Button} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const App = () => {
-  const input = useRef();
-
-  const updateInput = () => {
-    console.warn('Calling updateInput');
-    input.current.focus();
+  const setData = async () => {
+    await AsyncStorage.setItem('name', 'Md Somad');
+  };
+  const getData = async () => {
+    const name = await AsyncStorage.getItem('name');
+    console.warn(name);
+  };
+  const removeData = async () => {
+    await AsyncStorage.removeItem('name');
   };
 
   return (
-    <View style={styles.container}>
-      <TextInput ref={input} style={styles.input} placeholder="Enter name" />
-      <TextInput style={styles.input} placeholder="Enter age" />
-      <Button title="Update Input" onPress={updateInput} />
+    <View>
+      <Text
+        style={{
+          fontSize: 30,
+          textAlign: 'center',
+          marginTop: 20,
+          marginBottom: 20,
+        }}>
+        Async Storage
+      </Text>
+      <View style={{marginBottom: 10, marginTop: 10}}>
+        <Button title="set Data" onPress={setData} />
+      </View>
+      <Button title="get Data" onPress={getData} />
+      <View style={{marginBottom: 10, marginTop: 10}}>
+        <Button title="remove Data" onPress={removeData} />
+      </View>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-
-  input: {
-    borderColor: 'skyblue',
-    borderWidth: 2,
-    margin: 10,
-  },
-});
-
 export default App;
-
 
 
 
