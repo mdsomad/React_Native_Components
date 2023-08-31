@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Button, StyleSheet, Modal} from 'react-native';
+import {View, Text, Button, StyleSheet, Modal, TextInput} from 'react-native';
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -85,10 +85,32 @@ const App = () => {
 
 
 const UserMpdal = (props)=>{
+  
+  const [name, setName] = useState(undefined);
+  const [age, setAge] = useState(undefined);
+  const [email, setEmail] = useState(undefined);
+
+
+  useEffect(() => {
+    setName(props.selectedUser.name)
+    setEmail(props.selectedUser.email)
+    setAge(props.selectedUser.age.toString())
+  }, [props.selectedUser])
+  
+  
+  
+  
+  
   return(
     <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Text style={{color:'black'}}>{props.selectedUser.name}</Text>
+
+              <TextInput style={styles.input} value={name}/>
+              <TextInput style={styles.input} value={age}/>
+              <TextInput style={styles.input} value={email}/>
+              <View style={{marginBottom:10}}>
+                <Button title='Upade'/>
+              </View>
               <Button title='Close'
                onPress={() => props.setShowMpdal(false)}
               />
@@ -123,6 +145,13 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOpacity:'0.70',
     elevation:5
+  },
+  input:{
+    borderWidth:1,
+    borderColor:"skyblue",
+    width:300,
+    marginBottom:15,
+    color:"black"
   }
 });
 

@@ -66,14 +66,14 @@ http://10.0.2.2:3000/users
 ```
 
 
-##  Pass Data to Modal in React Native Ui Preview
+##  Populate Data in Input field in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Modal Create view</th>
+   <th>Data in Input field view</th>
 
 </tr>
   
