@@ -30,11 +30,10 @@ const App = () => {
     getApiData();
   }, []);
 
-
-  const updateUser = (data) => {
+  const updateUser = data => {
     setShowMpdal(true);
-    setSelectedUser(data)
-  }
+    setSelectedUser(data);
+  };
 
   return (
     <View style={styles.container}>
@@ -63,64 +62,44 @@ const App = () => {
                 <Button title="Delete" onPress={() => deleteUser(item.id)} />
               </View>
               <View style={{flex: 1}}>
-                <Button title="Update"
-                 onPress={()=> updateUser(item)}
-                 />
+                <Button title="Update" onPress={() => updateUser(item)} />
               </View>
             </View>
           ))
         : null}
 
-        <Modal visible={showMpdal} transparent={true}>
-
-          <UserMpdal setShowMpdal = {setShowMpdal} selectedUser = {selectedUser}/>
-          
-        </Modal>
-        
-        
+      <Modal visible={showMpdal} transparent={true}>
+        <UserMpdal setShowMpdal={setShowMpdal} selectedUser={selectedUser} />
+      </Modal>
     </View>
   );
 };
 
-
-
-const UserMpdal = (props)=>{
-  
+const UserMpdal = props => {
   const [name, setName] = useState(undefined);
   const [age, setAge] = useState(undefined);
   const [email, setEmail] = useState(undefined);
 
-
   useEffect(() => {
-    setName(props.selectedUser.name)
-    setEmail(props.selectedUser.email)
-    setAge(props.selectedUser.age.toString())
-  }, [props.selectedUser])
-  
-  
-  
-  
-  
-  return(
+    setName(props.selectedUser.name);
+    setEmail(props.selectedUser.email);
+    setAge(props.selectedUser.age.toString());
+  }, [props.selectedUser]);
+
+  return (
     <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-
-              <TextInput style={styles.input} value={name}/>
-              <TextInput style={styles.input} value={age}/>
-              <TextInput style={styles.input} value={email}/>
-              <View style={{marginBottom:10}}>
-                <Button title='Upade'/>
-              </View>
-              <Button title='Close'
-               onPress={() => props.setShowMpdal(false)}
-              />
-            </View>
-          </View>
-  )
-}
-
-
-
+      <View style={styles.modalView}>
+        <TextInput style={styles.input} value={name} />
+        <TextInput style={styles.input} value={age} />
+        <TextInput style={styles.input} value={email} />
+        <View style={{marginBottom: 10}}>
+          <Button title="Upade" />
+        </View>
+        <Button title="Close" onPress={() => props.setShowMpdal(false)} />
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -133,26 +112,26 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 10,
   },
-  centeredView:{
-    flex:1,
+  centeredView: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  modalView:{
-    backgroundColor:'#fff',
-    padding:40,
-    borderRadius:10,
+  modalView: {
+    backgroundColor: '#fff',
+    padding: 40,
+    borderRadius: 10,
     shadowColor: '#000',
-    shadowOpacity:'0.70',
-    elevation:5
+    shadowOpacity: '0.70',
+    elevation: 5,
   },
-  input:{
-    borderWidth:1,
-    borderColor:"skyblue",
-    width:300,
-    marginBottom:15,
-    color:"black"
-  }
+  input: {
+    borderWidth: 1,
+    borderColor: 'skyblue',
+    width: 300,
+    marginBottom: 15,
+    color: 'black',
+  },
 });
 
 export default App;
