@@ -1,39 +1,55 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {View, Button,Text,StyleSheet,Image,ScrollView} from 'react-native';
+import Header from './Components/Header';
+import Product from './Components/Product';
 
 const App = () => {
-  const setData = async () => {
-    await AsyncStorage.setItem('name', 'Md Somad');
-  };
-  const getData = async () => {
-    const name = await AsyncStorage.getItem('name');
-    console.warn(name);
-  };
-  const removeData = async () => {
-    await AsyncStorage.removeItem('name');
-  };
+
+
+  const products = [
+    {
+      name:"Samsung",
+      color:"red",
+      price:15000,
+      image:"https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/6/v/0/c51-mzb0dxkin-poco-original-imagzdpycgrcdc8z.jpeg?q=70"
+    },
+    {
+      name:"OnePlus",
+      color:"red",
+      price:25000,
+      image:"https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/6/v/0/c51-mzb0dxkin-poco-original-imagzdpycgrcdc8z.jpeg?q=70"
+    },
+    {
+      name:"Appple",
+      color:"green",
+      price:50000,
+      image:"https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/6/v/0/c51-mzb0dxkin-poco-original-imagzdpycgrcdc8z.jpeg?q=70"
+    },
+    {
+      name:"Redme",
+      color:"pink",
+      price:15000,
+      image:"https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/6/v/0/c51-mzb0dxkin-poco-original-imagzdpycgrcdc8z.jpeg?q=70"
+    },
+  ]
+  
 
   return (
-    <View>
-      <Text
-        style={{
-          fontSize: 30,
-          textAlign: 'center',
-          marginTop: 20,
-          marginBottom: 20,
-        }}>
-        Async Storage
-      </Text>
-      <View style={{marginBottom: 10, marginTop: 10}}>
-        <Button title="set Data" onPress={setData} />
-      </View>
-      <Button title="get Data" onPress={getData} />
-      <View style={{marginBottom: 10, marginTop: 10}}>
-        <Button title="remove Data" onPress={removeData} />
-      </View>
+    <View style={styles.container}>
+      <Header/>
+      <ScrollView>
+      {
+        products.map((item)=> <Product item={item}/> )
+      }
+      </ScrollView>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1
+  }
+});
 
 export default App;

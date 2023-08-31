@@ -43,12 +43,13 @@ yarn ios
 ```
 
 
-- [Async Storage installation packages link](https://react-native-async-storage.github.io/async-storage/docs/install/)
-- [Async Storage Usage link](https://react-native-async-storage.github.io/async-storage/docs/usage)
-# Async Storage Install command
+- [Redux Toolkit installation packages link](https://redux.js.org/introduction/installation)
+# Redux Toolkit Install commands
 ```bash
 # With npm
-npm install @react-native-async-storage/async-storage
+npm install redux
+npm install react-redux
+npm install @reduxjs/toolkit
 ```
 # Then run this command
 ```bash
