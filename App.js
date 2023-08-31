@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet, Modal} from 'react-native';
 
 const App = () => {
   const [data, setData] = useState([]);
+  const [showMpdal, setShowMpdal] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(undefined);
 
   const getApiData = async () => {
     const url = 'http://10.0.2.2:3000/users';
@@ -27,6 +29,12 @@ const App = () => {
   useEffect(() => {
     getApiData();
   }, []);
+
+
+  const updateUser = (data) => {
+    setShowMpdal(true);
+    setSelectedUser(data)
+  }
 
   return (
     <View style={styles.container}>
@@ -55,14 +63,42 @@ const App = () => {
                 <Button title="Delete" onPress={() => deleteUser(item.id)} />
               </View>
               <View style={{flex: 1}}>
-                <Button title="Update" />
+                <Button title="Update"
+                 onPress={()=> updateUser(item)}
+                 />
               </View>
             </View>
           ))
         : null}
+
+        <Modal visible={showMpdal} transparent={true}>
+
+          <UserMpdal setShowMpdal = {setShowMpdal} selectedUser = {selectedUser}/>
+          
+        </Modal>
+        
+        
     </View>
   );
 };
+
+
+
+const UserMpdal = (props)=>{
+  return(
+    <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={{color:'black'}}>{props.selectedUser.name}</Text>
+              <Button title='Close'
+               onPress={() => props.setShowMpdal(false)}
+              />
+            </View>
+          </View>
+  )
+}
+
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -75,6 +111,19 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 10,
   },
+  centeredView:{
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalView:{
+    backgroundColor:'#fff',
+    padding:40,
+    borderRadius:10,
+    shadowColor: '#000',
+    shadowOpacity:'0.70',
+    elevation:5
+  }
 });
 
 export default App;
