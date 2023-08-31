@@ -66,14 +66,17 @@ http://10.0.2.2:3000/users
 ```
 
 
-##  Populate Data in Input field in React Native Ui Preview
+## API Put Method | Update with rest API in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Data in Input field view</th>
+   <th>Old Data view</th>
+   <th>Dialog Data view</th>
+   <th>Updated Data Dialog view</th>
+   <th>Updated Data view</th>
 
 </tr>
   
@@ -84,7 +87,22 @@ http://10.0.2.2:3000/users
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/8cac3163-5351-47e0-89ae-93a5fdfe883d" width="280"/>
+<img src="" width="280"/>
+
+</td>
+<td>
+
+<img src="" width="280"/>
+
+</td>
+<td>
+
+<img src="" width="280"/>
+
+</td>
+<td>
+
+<img src="" width="280"/>
 
 </td>
 
@@ -172,7 +190,11 @@ const App = () => {
         : null}
 
       <Modal visible={showMpdal} transparent={true}>
-        <UserMpdal setShowMpdal={setShowMpdal} selectedUser={selectedUser} />
+        <UserMpdal
+          setShowMpdal={setShowMpdal}
+          selectedUser={selectedUser}
+          getApiData={getApiData}
+        />
       </Modal>
     </View>
   );
@@ -189,14 +211,46 @@ const UserMpdal = props => {
     setAge(props.selectedUser.age.toString());
   }, [props.selectedUser]);
 
+  const updateUser = async () => {
+    console.warn(name, age, email);
+    const url = 'http://10.0.2.2:3000/users';
+    const id = props.selectedUser.id;
+    let result = await fetch(`${url}/${id}`, {
+      method: 'Put',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({name, age, email}),
+    });
+    result = await result.json();
+
+    if (result) {
+      console.warn(result);
+      props.getApiData();
+      props.setShowMpdal(false);
+    }
+  };
+
   return (
     <View style={styles.centeredView}>
       <View style={styles.modalView}>
-        <TextInput style={styles.input} value={name} />
-        <TextInput style={styles.input} value={age} />
-        <TextInput style={styles.input} value={email} />
+        <TextInput
+          style={styles.input}
+          value={name}
+          onChangeText={text => setName(text)}
+        />
+        <TextInput
+          style={styles.input}
+          value={age}
+          onChangeText={text => setAge(text)}
+        />
+        <TextInput
+          style={styles.input}
+          value={email}
+          onChangeText={text => setEmail(text)}
+        />
         <View style={{marginBottom: 10}}>
-          <Button title="Upade" />
+          <Button title="Upade" onPress={updateUser} />
         </View>
         <Button title="Close" onPress={() => props.setShowMpdal(false)} />
       </View>
@@ -238,6 +292,7 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
 
 
 
