@@ -71,7 +71,9 @@ npm start ——clean—cache
   
 <tr>                    
    
-   <th>Async Storage Data Set & Get view</th>
+   <th>Async Storage Data Set view</th>
+   <th>Async Storage Data Get view</th>
+
 
 </tr>
   
@@ -79,18 +81,24 @@ npm start ——clean—cache
   
   
 <tr>
+
+<td>
+
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/3d8d5c6b-8f62-434d-b9ac-0deac314554a" width="280"/>
+
+</td>
   
 <td>
 
-<img src="" width="280"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/4b239378-7a42-434f-a4d4-d717f7b81c4a" width="280"/>
 
 </td>
 
 
 
 
-</table>
 
+</table>
 
 
 ## Code Example
