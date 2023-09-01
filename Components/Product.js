@@ -1,14 +1,14 @@
 import React from 'react';
 import {View, Text ,Image,Button} from 'react-native';
 import {useDispatch} from 'react-redux'
-import { addToCart } from './redux/action';
+import { addCartItem } from './redux/cartSlice';
 
 const Product = (props) => {
   const item = props.item;
   const dispatch = useDispatch()
-  const handleAddToCart = (item) => {
-    dispatch(addToCart)
-    console.warn(item);
+  const handleAddToCart = (item)  => {
+    // console.warn(item)
+    dispatch(addCartItem(item))
   }
   
   

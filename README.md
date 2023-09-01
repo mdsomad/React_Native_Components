@@ -65,15 +65,15 @@ npm start ——clean—cache
 
 
 
-## Async Storage in React Native Ui Preview
+## Redux in React Native Ui Preview
 
 <table>
   
   
 <tr>                    
    
-   <th>Async Storage Data Set view</th>
-   <th>Async Storage Data Get view</th>
+   <th>Product AddToCart view 1</th>
+   <th>Product AddToCart view 2</th>
 
 
 </tr>
