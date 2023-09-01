@@ -85,13 +85,13 @@ npm start ——clean—cache
 
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/3d8d5c6b-8f62-434d-b9ac-0deac314554a" width="280"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/c0702118-bd84-439f-91cf-4c229353766c" width="280"/>
 
 </td>
   
 <td>
 
-<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/4b239378-7a42-434f-a4d4-d717f7b81c4a" width="280"/>
+<img src="https://github.com/mdsomad/React_Native_Components/assets/103892160/18013ea4-f448-418c-bc17-1a1f3e74d7ec" width="280"/>
 
 </td>
 
